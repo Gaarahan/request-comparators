@@ -3,13 +3,8 @@
   "description": "show each parameter of same requests, make compare parameter easier",
   "version": "1.0",
   "manifest_version": 3,
-  "background": {
-    "service_worker": "background.js"
-  },
-  "options_page": "./options/options.html",
   "permissions": ["storage", "activeTab", "scripting", "webRequest"],
   "action": {
-    "default_popup": "./popup/popup.html",
     "default_icon": {
       "16": "/images/icon.png",
       "32": "/images/icon.png",
