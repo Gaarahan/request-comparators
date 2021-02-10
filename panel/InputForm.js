@@ -13,9 +13,9 @@ let inputForm;
                     return this.setErrorStyle();
                 }
 
-                const isRecording = stateService.getState('isRecording');
+                const isRecording = requestComparatorsService.getState('isRecording');
 
-                stateService.setState('isRecording', !isRecording);
+                requestComparatorsService.setState('isRecording', !isRecording);
                 this.startBtn.innerText = isRecording ? 'Start' : 'Stop';
             })
 
