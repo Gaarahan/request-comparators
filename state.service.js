@@ -1,12 +1,19 @@
-const StateService = function () {
-    this.state = {}
-};
+let stateService;
 
-StateService.prototype.setState = function (key, value) {
-    console.log(this)
-    this.state[key] = value;
-};
+(() => {
+    class StateService {
+        constructor() {
+            this.state = {}
+        }
 
-StateService.prototype.getState = function (key) {
-    return this.state[key];
-}
+        setState(key, value) {
+            this.state[key] = value;
+        };
+
+        getState(key) {
+            return this.state[key];
+        }
+
+    }
+    stateService = new StateService();
+})()
