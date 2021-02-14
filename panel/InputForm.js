@@ -13,10 +13,15 @@ let inputForm;
                     return this.setErrorStyle();
                 }
 
-                const isRecording = requestComparatorsService.getState('isRecording');
+                const isRecording = stateService.getState('isRecording');
 
-                requestComparatorsService.setState('isRecording', !isRecording);
+                stateService.setState('isRecording', !isRecording);
                 this.startBtn.innerText = isRecording ? 'Start' : 'Stop';
+
+                if (!isRecording) {
+                    stateService.setState('url', this.urlInput.value);
+                    requestComparatorsService.startRecording();
+                }
             })
 
             this.urlInput.addEventListener('input', () => {
@@ -31,6 +36,10 @@ let inputForm;
 
         removeErrorStyle() {
             this.urlInput.classList.remove('error')
+        }
+
+        get url() {
+            return this.url;
         }
     }
 
