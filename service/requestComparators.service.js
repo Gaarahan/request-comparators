@@ -5,12 +5,12 @@ let requestComparatorsService;
     class RequestComparatorsService {
         startRecording() {
             stateService.setState('isRecording', true);
-            chrome.devtools.network.onRequestFinished.addListener(this.recordingHandle)
+            chrome.devtools.network.onRequestFinished.addListener(this.recordingHandle.bind(this))
         }
 
         stopRecording() {
             stateService.setState('isRecording', false);
-            chrome.devtools.network.onRequestFinished.removeListener(this.recordingHandle);
+            chrome.devtools.network.onRequestFinished.removeListener(this.recordingHandle.bind(this));
         }
 
         recordingHandle({ request }) {
@@ -22,7 +22,7 @@ let requestComparatorsService;
 
             if (url === stateService.getState('url')) {
                 const params = this.resolveParams(request);
-                console.log(params);
+                paramsForm.setParam(params);
             }
         }
 

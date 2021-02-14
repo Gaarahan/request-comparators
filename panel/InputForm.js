@@ -18,10 +18,12 @@ let inputForm;
                 if(isRecording) {
                     this.startBtn.innerText = 'Start';
                     requestComparatorsService.stopRecording();
+                    this.urlInput.removeAttribute('disabled');
                 } else {
                     this.startBtn.innerText = 'Stop';
                     stateService.setState('url', this.urlInput.value);
                     requestComparatorsService.startRecording();
+                    this.urlInput.setAttribute('disabled', 'disabled')
                 }
             })
 
