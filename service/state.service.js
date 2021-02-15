@@ -1,19 +1,20 @@
 let stateService;
 
 (() => {
-    class StateService {
-        constructor() {
-            this.state = {}
-        }
-
-        setState(key, value) {
-            this.state[key] = value;
-        };
-
-        getState(key) {
-            return this.state[key];
-        }
-
+  class StateService {
+    constructor() {
+      this.state = {}
     }
-    stateService = new StateService();
+
+    setState(key, value) {
+      this.state[key] = value;
+    };
+
+    getState(key) {
+      return this.state[key];
+    }
+
+  }
+
+  stateService = new StateService();
 })()

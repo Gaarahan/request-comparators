@@ -3,7 +3,12 @@
   "description": "show each parameter of same requests, make compare parameter easier",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["storage", "activeTab", "scripting", "webRequest"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "webRequest"
+  ],
   "action": {
     "default_icon": {
       "16": "/images/icon.png",

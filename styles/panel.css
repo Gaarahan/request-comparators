@@ -2,7 +2,8 @@ body {
     padding: 10px 20px;
     font-size: 16px;
 }
-.input-container *{
+
+.input-container * {
     font-size: 16px;
 }
 
@@ -13,6 +14,12 @@ body {
 #url-input {
     flex-grow: 1;
     margin: 0 10px;
+}
+
+.desc-tip {
+    color: gray;
+    user-select: none;
+    font-size: small;
 }
 
 .error {
