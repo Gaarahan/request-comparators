@@ -1,13 +1,13 @@
-class ParamItem {
+import { ElementCreator } from '../ElementCreator';
+import ParamPrefix from "./ParamPrefix";
+
+export default class ParamItem extends ElementCreator {
   constructor(param) {
-    this.curPrefix = new ParamPrefix();
+    super();
+    this.curPrefix = new ParamPrefix().getElement();
 
-    this.paramItem = document.createElement('li');
-    this.paramItem.insertAdjacentElement('afterbegin', this.curPrefix.getElement())
-    this.paramItem.insertAdjacentText('beforeend', `${JSON.stringify(param)}`)
-  }
-
-  getElement() {
-    return this.paramItem;
+    this.element = document.createElement('li');
+    this.element.insertAdjacentElement('afterbegin', this.curPrefix)
+    this.element.insertAdjacentText('beforeend', `${JSON.stringify(param)}`)
   }
 }
