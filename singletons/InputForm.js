@@ -46,3 +46,4 @@ let inputForm;
 })()
 
 
+export default inputForm; 

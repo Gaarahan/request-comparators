@@ -1,4 +1,4 @@
-export class ElementCreator {
+export default class ElementCreator {
   constructor() {
     this.element = null;
   }

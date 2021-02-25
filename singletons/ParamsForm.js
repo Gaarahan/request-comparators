@@ -1,4 +1,4 @@
-import ParamItem from "../components/ParamItem/ParamItem";
+import ParamItem from "../components/ParamItem/ParamItem.js";
 
 let paramsForm;
 (() => {
@@ -21,3 +21,4 @@ let paramsForm;
 })()
 
 
+export default ParamForm;
