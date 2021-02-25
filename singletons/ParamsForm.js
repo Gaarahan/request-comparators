@@ -21,4 +21,4 @@ let paramsForm;
 })()
 
 
-export default ParamForm;
+export default paramsForm;
