@@ -11,6 +11,7 @@ export default class ParamsListComponent {
   renderParams() {
     const paramsList = stateService.getState('paramsList');
 
+    // TODO 重新渲染的目的只是为了添加一条新数据,没有必要重新加载整个列表
     this.paramsListEle.innerHTML = '';
     paramsList.forEach(param => {
       const paramItem = new ParamItem(param);
