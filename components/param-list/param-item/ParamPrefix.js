@@ -1,4 +1,4 @@
-import ElementCreator from '../ElementCreator.js';
+import ElementCreator from '../../common/ElementCreator.js';
 
 export default class ParamPrefix extends ElementCreator{
   constructor() {

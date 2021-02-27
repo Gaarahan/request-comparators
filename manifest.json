@@ -11,17 +11,17 @@
   ],
   "action": {
     "default_icon": {
-      "16": "/images/icon.png",
-      "32": "/images/icon.png",
-      "48": "/images/icon.png",
-      "128": "/images/icon.png"
+      "16": "/icons/icon.png",
+      "32": "/icons/icon.png",
+      "48": "/icons/icon.png",
+      "128": "/icons/icon.png"
     }
   },
   "icons": {
-    "16": "/images/icon.png",
-    "32": "/images/icon.png",
-    "48": "/images/icon.png",
-    "128": "/images/icon.png"
+    "16": "/icons/icon.png",
+    "32": "/icons/icon.png",
+    "48": "/icons/icon.png",
+    "128": "/icons/icon.png"
   },
   "devtools_page": "./devtools/devtools.html"
 }

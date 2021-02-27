@@ -1,3 +1,5 @@
+import stateService from "./state.service.js";
+
 let requestComparatorsService;
 
 (() => {
@@ -22,7 +24,10 @@ let requestComparatorsService;
 
       if (url === stateService.getState('url')) {
         const params = this.resolveParams(request);
-        paramsForm.setParam(params);
+        const paramsList = stateService.getState('paramsList');
+        paramsList.push(params);
+
+        stateService.setState('paramsList', paramsList);
       }
     }
 
@@ -41,3 +46,5 @@ let requestComparatorsService;
 
   requestComparatorsService = new RequestComparatorsService();
 })()
+
+export default requestComparatorsService;
