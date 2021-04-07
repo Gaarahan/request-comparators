@@ -4,21 +4,24 @@
   <meta charset="UTF-8">
   <title>RequestComparators</title>
   <link rel="stylesheet" href="./styles/panel.css">
+  <!--  https://github.com/pgrabovets/json-view -->
+  <link rel="stylesheet" type="text/css"
+        href="./lib/jsonview/jsonview.bundle.css">
+  <script src="./lib/jsonview/jsonview.bundle.js"></script>
 </head>
 <body>
 <div class="input-container">
   <label for="url-input"> URL: </label>
-  <input type="text" id="url-input" placeholder="Put the url which you want to watch.">
+  <input
+      type="text"
+      id="url-input"
+      placeholder="Put the url which you want to watch."
+  >
   <button id="start-btn">Start</button>
 </div>
 
 <p class="desc-tip">The params of watch request will display here :</p>
-<ul id="params-list">
-  <li>han</li>
-  <li>zhao</li>
-  <li>feng</li>
-  <li>daod</li>
-</ul>
+<ul id="params-list"></ul>
 
 <script type="module" src="./service/state.service.js"></script>
 <script type="module" src="./service/requestComparators.service.js"></script>

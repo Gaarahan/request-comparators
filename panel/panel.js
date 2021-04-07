@@ -4,7 +4,7 @@ import ParamsListComponent from '../components/param-list/ParamsListComponent.js
 
 function initPage() {
   const inputForm = new InputFormComponent();
-  const paramsList = new ParamsListComponent()
+  new ParamsListComponent()
   stateService.setState('isRecording', false)
   inputForm.initEvent();
 }
