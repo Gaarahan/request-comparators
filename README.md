@@ -1,4 +1,6 @@
-- 选择一个请求路径，点击开始来录制其所有传参
+### 更方便的比较与调试接口传参！！！
+选择一个请求路径，点击开始来录制其所有传参。支持GET、POST数据的展示。
+
 ![image](https://user-images.githubusercontent.com/34125917/113899038-fc945900-97fe-11eb-9f2c-33520de34fd1.png)
 
 ### TODO - 需求
