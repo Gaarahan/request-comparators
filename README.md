@@ -3,7 +3,7 @@
 
 ![image](https://user-images.githubusercontent.com/34125917/113899038-fc945900-97fe-11eb-9f2c-33520de34fd1.png)
 
-### Useage
+### Installing
 下载该项目，打开Chrome - 管理扩展程序 - 开发者模式 - 加载已解压的扩展程序 - 选择项目目录即可
 ![image](https://user-images.githubusercontent.com/34125917/113977898-d8279380-9875-11eb-8212-641a1dcb8e6e.png)
 
