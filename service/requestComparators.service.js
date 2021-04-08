@@ -37,7 +37,7 @@ let requestComparatorsService;
         return request.queryString;
       } else if (request.method === 'POST') {
         // TODO 处理 application/json 之外的类型
-        if (request.postData.mimeType === 'application/json; charset=UTF-8') {
+        if (request.postData.mimeType.startsWith('application/json')) {
           return JSON.parse(request.postData.text);
         }
       }
@@ -48,3 +48,4 @@ let requestComparatorsService;
 })()
 
 export default requestComparatorsService;
+
