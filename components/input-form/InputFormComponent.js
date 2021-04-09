@@ -6,6 +6,8 @@ export default class InputFormComponent {
   constructor() {
     this.urlInput = document.querySelector('#url-input');
     this.startBtn = document.querySelector('#start-btn');
+
+    this.initEvent();
   }
 
   initEvent() {

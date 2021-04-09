@@ -1,35 +1,35 @@
+/*global*/
 body {
-    padding: 10px 20px;
-    font-size: 16px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/*header input*/
+.input-container {
+  display: flex;
 }
 
 .input-container * {
-    font-size: 16px;
-}
-
-.input-container {
-    display: flex;
+  font-size: 16px;
 }
 
 #url-input {
-    flex-grow: 1;
-    margin: 0 10px;
+  flex-grow: 1;
+  margin: 0 10px;
 }
 
+#url-input.error {
+  outline-color: red;
+}
+
+/*params list*/
+.params-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .desc-tip {
-    color: gray;
-    user-select: none;
-    font-size: small;
-}
-
-.error {
-    outline-color: red;
-}
-
-.params_item--svg {
-    cursor: pointer;
-    width: 14px;
-    vertical-align: bottom;
-    transform: rotate(270deg);
-    margin: 0 5px 0 0;
+  color: gray;
+  user-select: none;
+  font-size: small;
 }

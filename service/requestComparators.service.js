@@ -15,6 +15,10 @@ let requestComparatorsService;
       chrome.devtools.network.onRequestFinished.removeListener(this.recordingHandle.bind(this));
     }
 
+    clearRecords() {
+      stateService.setState('paramsList', []);
+    }
+
     recordingHandle({request}) {
       let {url} = request;
       const indexOfQuery = url.indexOf('?');
