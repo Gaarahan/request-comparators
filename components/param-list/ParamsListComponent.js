@@ -21,9 +21,11 @@ export default class ParamsListComponent {
 
   renderParams() {
     const paramsList = stateService.getState('paramsList');
-
-    const paramItem = new ParamItem(paramsList[paramsList.length - 1]);
-
-    this.paramsListEle.appendChild(paramItem.getElement());
+    if (paramsList.length === 0) {
+      this.paramsListEle.innerHTML = '';
+    } else {
+      const paramItem = new ParamItem(paramsList[paramsList.length - 1]);
+      this.paramsListEle.appendChild(paramItem.getElement());
+    }
   }
 }
