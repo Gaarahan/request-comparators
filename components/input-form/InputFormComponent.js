@@ -1,23 +1,23 @@
-import stateService from "../../service/state.service.js";
 import requestComparatorsService
   from '../../service/requestComparators.service.js';
+import ComponentWithStore from "../common/ComponentWithStore.js";
 
-export default class InputFormComponent {
+export default class InputFormComponent extends ComponentWithStore{
   constructor() {
+    super();
+
     this.urlInput = document.querySelector('#url-input');
     this.startBtn = document.querySelector('#start-btn');
-
-    this.initEvent();
   }
 
-  initEvent() {
+  onInit() {
     this.startBtn.addEventListener('click', () => {
       let value = this.urlInput.value.trim();
       if (!value) {
         return this.setErrorStyle();
       }
 
-      const isRecording = stateService.getState('isRecording');
+      const isRecording = this.store.getState('isRecording');
 
       if (isRecording) {
         this.startBtn.innerText = 'Start';
@@ -25,7 +25,7 @@ export default class InputFormComponent {
         this.urlInput.removeAttribute('disabled');
       } else {
         this.startBtn.innerText = 'Stop';
-        stateService.setState('url', this.urlInput.value);
+        this.store.setState('url', this.urlInput.value);
         requestComparatorsService.startRecording();
         this.urlInput.setAttribute('disabled', 'disabled')
       }
@@ -34,6 +34,10 @@ export default class InputFormComponent {
     this.urlInput.addEventListener('input', () => {
       this.removeErrorStyle();
     })
+
+    this.urlInput.addEventListener('change', () => {
+      this.store.setState('url', this.urlInput.value);
+    });
   }
 
   setErrorStyle() {

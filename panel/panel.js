@@ -1,5 +1,5 @@
 import InputFormComponent from "../components/input-form/InputFormComponent.js";
-import stateService from "../service/state.service.js";
+import stateService from "../service/store.service.js";
 import ParamsListComponent from '../components/param-list/ParamsListComponent.js'
 
 function initPage() {

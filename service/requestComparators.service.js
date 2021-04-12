@@ -1,4 +1,4 @@
-import stateService from "./state.service.js";
+import stateService from "./store.service.js";
 
 let requestComparatorsService;
 

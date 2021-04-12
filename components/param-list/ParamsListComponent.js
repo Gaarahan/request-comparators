@@ -1,26 +1,25 @@
 import ParamItem from './param-item/ParamItem.js';
-import stateService from '../../service/state.service.js';
 import requestComparatorsService
   from '../../service/requestComparators.service.js';
+import ComponentWithStore from "../common/ComponentWithStore.js";
 
-export default class ParamsListComponent {
+export default class ParamsListComponent extends ComponentWithStore{
   constructor() {
+    super();
     this.paramsListEle = document.querySelector('#params-list');
     this.clearBtnEle = document.querySelector('#clear-btn');
-
-    this.initEvent();
   }
 
-  initEvent() {
+  onInit() {
     this.clearBtnEle.addEventListener('click', () => {
       requestComparatorsService.clearRecords();
     });
 
-    stateService.watchState('paramsList', this.renderParams.bind(this));
+    this.store.watchState('paramsList', this.renderParams.bind(this));
   }
 
   renderParams() {
-    const paramsList = stateService.getState('paramsList');
+    const paramsList = this.store.getState('paramsList');
     if (paramsList.length === 0) {
       this.paramsListEle.innerHTML = '';
     } else {
