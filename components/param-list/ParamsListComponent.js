@@ -4,13 +4,10 @@ import requestComparatorsService
 import ComponentWithStore from "../common/ComponentWithStore.js";
 
 export default class ParamsListComponent extends ComponentWithStore{
-  constructor() {
-    super();
+  onInit() {
     this.paramsListEle = document.querySelector('#params-list');
     this.clearBtnEle = document.querySelector('#clear-btn');
-  }
 
-  onInit() {
     this.clearBtnEle.addEventListener('click', () => {
       requestComparatorsService.clearRecords();
     });

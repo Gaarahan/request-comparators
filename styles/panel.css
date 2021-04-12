@@ -23,11 +23,6 @@ body {
 }
 
 /*params list*/
-.params-list__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .desc-tip {
   color: gray;
   user-select: none;

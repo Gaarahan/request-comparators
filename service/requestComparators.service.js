@@ -1,37 +1,40 @@
-import stateService from "./store.service.js";
+import State from "../store/index.state.js";
 
-let requestComparatorsService;
+let requestComparatorsService = null;
 
 (() => {
 
   class RequestComparatorsService {
+    constructor() {
+      this.store = new State();
+      this.startRecording();
+    }
+
     startRecording() {
-      stateService.setState('isRecording', true);
       chrome.devtools.network.onRequestFinished.addListener(this.recordingHandle.bind(this))
     }
 
-    stopRecording() {
-      stateService.setState('isRecording', false);
-      chrome.devtools.network.onRequestFinished.removeListener(this.recordingHandle.bind(this));
-    }
-
     clearRecords() {
-      stateService.setState('paramsList', []);
+      this.store.setState('paramsList', []);
     }
 
-    recordingHandle({request}) {
+    recordingHandle({request, _resourceType}) {
+      if (_resourceType !== 'xhr') {
+        return false;
+      }
+
       let {url} = request;
       const indexOfQuery = url.indexOf('?');
       if (indexOfQuery >= 0) {
         url = url.slice(0, indexOfQuery)
       }
 
-      if (url === stateService.getState('url')) {
+      if (url === this.store.getState('url')) {
         const params = this.resolveParams(request);
-        const paramsList = stateService.getState('paramsList');
+        const paramsList = this.store.getState('paramsList');
         paramsList.push(params);
 
-        stateService.setState('paramsList', paramsList);
+        this.store.setState('paramsList', paramsList);
       }
     }
 
