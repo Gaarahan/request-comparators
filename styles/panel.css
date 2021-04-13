@@ -13,13 +13,9 @@ body {
   font-size: 16px;
 }
 
-#url-input {
+#url-select {
   flex-grow: 1;
   margin: 0 10px;
-}
-
-#url-input.error {
-  outline-color: red;
 }
 
 /*params list*/

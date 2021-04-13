@@ -2,13 +2,13 @@ import ComponentWithStore from "../common/ComponentWithStore.js";
 
 export default class InputFormComponent extends ComponentWithStore{
   onInit() {
-    this.urlInput = document.querySelector('#url-input');
+    this.urlSelectEle = document.querySelector('#url-select');
     this.urlListEle = document.querySelector('#url-list');
 
     this.store.setState('isRecording', false)
 
-    this.urlInput.addEventListener('change', () => {
-      this.store.setState('url', this.urlInput.value.trim());
+    this.urlSelectEle.addEventListener('change', () => {
+      this.store.setState('url', this.urlSelectEle.value.trim());
     });
 
     this.store.watchState('urlOptionList', this.renderUrlOptions.bind(this));

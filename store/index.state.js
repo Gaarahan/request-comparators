@@ -4,7 +4,8 @@ import EventEmitter from "../utils/EventEmitter.js";
 const initialState = {
   isRecording: false,
   url: null,
-  paramsList: []
+  paramsList: [],
+  urlOptionList: []
 }
 
 const state = new StoreService(initialState);
@@ -29,6 +30,6 @@ export default class State {
   }
 
   storeUrlOption(url) {
-    this.setState('urlOptionList', [...this.state.urlOptionList, url])
+    this.setState('urlOptionList', [...state.getValue('urlOptionList'), url])
   }
 }
