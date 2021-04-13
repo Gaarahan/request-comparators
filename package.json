@@ -1,0 +1,23 @@
+{
+  "name": "request-comparators",
+  "version": "1.0.0",
+  "description": "选择一个请求路径，点击开始来录制其所有传参。支持GET、POST数据的展示。",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gaarahan/request-comparators.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gaarahan/request-comparators/issues"
+  },
+  "homepage": "https://github.com/Gaarahan/request-comparators#readme"
+}

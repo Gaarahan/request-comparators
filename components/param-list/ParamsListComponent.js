@@ -15,8 +15,7 @@ export default class ParamsListComponent extends ComponentWithStore{
     this.store.watchState('paramsList', this.renderParams.bind(this));
   }
 
-  renderParams() {
-    const paramsList = this.store.getState('paramsList');
+  renderParams(paramsList) {
     if (paramsList.length === 0) {
       this.paramsListEle.innerHTML = '';
     } else {

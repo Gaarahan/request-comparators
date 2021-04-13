@@ -1,4 +1,5 @@
 import State from "../store/index.state.js";
+import {getOriginUrl} from '../utils/utils.js';
 
 let requestComparatorsService = null;
 
@@ -7,10 +8,14 @@ let requestComparatorsService = null;
   class RequestComparatorsService {
     constructor() {
       this.store = new State();
-      this.startRecording();
     }
 
-    startRecording() {
+    startWatchingRequest() {
+      chrome.devtools.network.onRequestFinished.addListener(({request, _resourceType}) => {
+        if (_resourceType === 'xhr') {
+          this.store.storeUrlOption(getOriginUrl(request.url))
+        }
+      })
       chrome.devtools.network.onRequestFinished.addListener(this.recordingHandle.bind(this))
     }
 
@@ -23,11 +28,7 @@ let requestComparatorsService = null;
         return false;
       }
 
-      let {url} = request;
-      const indexOfQuery = url.indexOf('?');
-      if (indexOfQuery >= 0) {
-        url = url.slice(0, indexOfQuery)
-      }
+      const url = getOriginUrl(request.url);
 
       if (url === this.store.getState('url')) {
         const params = this.resolveParams(request);

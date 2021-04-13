@@ -27,4 +27,8 @@ export default class State {
   getStateUpdateEvent(key) {
     return `state-${key}:update`
   }
+
+  storeUrlOption(url) {
+    this.setState('urlOptionList', [...this.state.urlOptionList, url])
+  }
 }
