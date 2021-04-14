@@ -30,6 +30,10 @@ export default class State {
   }
 
   storeUrlOption(url) {
-    this.setState('urlOptionList', [...state.getValue('urlOptionList'), url])
+    const urlOptionList = state.getValue('urlOptionList');
+    if (urlOptionList.indexOf(url) < 0) {
+      urlOptionList.push(url);
+      this.setState('urlOptionList', urlOptionList);
+    }
   }
 }

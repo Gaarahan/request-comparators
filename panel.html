@@ -11,11 +11,13 @@
 </head>
 <body>
 <div class="input-container">
-  <label for="url-select">Select the url which you want to watch: </label>
+  <label for="url-select">Url: </label>
   <select
       name="url-select"
       id="url-select"
-  ></select>
+  >
+    <option value="">Select the url which you want to watch </option>
+  </select>
   <button id="clear-btn">Clear</button>
 </div>
 
@@ -24,7 +26,6 @@
   <ul id="params-list"></ul>
 </div>
 
-<script type="module" src="service/store.service.js"></script>
 <script type="module" src="./service/requestComparators.service.js"></script>
 <script type='module' src="./panel/panel.js"></script>
 </body>

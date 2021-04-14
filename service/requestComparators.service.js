@@ -1,9 +1,6 @@
 import State from "../store/index.state.js";
 import {getOriginUrl} from '../utils/utils.js';
 
-let requestComparatorsService = null;
-
-(() => {
 
   class RequestComparatorsService {
     constructor() {
@@ -44,16 +41,17 @@ let requestComparatorsService = null;
       if (request.method === 'GET') {
         return request.queryString;
       } else if (request.method === 'POST') {
-        // TODO 处理 application/json 之外的类型
+        const mimeType = request.postData.mimeType;
         if (request.postData.mimeType.startsWith('application/json')) {
           return JSON.parse(request.postData.text);
+        } else if (mimeType.startsWith("application/x-www-form-urlencoded")) {
+          return JSON.parse(request.postData.params);
+        } else {
+          return 'Cannot get correct params'
         }
       }
     }
   }
 
-  requestComparatorsService = new RequestComparatorsService();
-})()
-
-export default requestComparatorsService;
+export default new RequestComparatorsService();
 
