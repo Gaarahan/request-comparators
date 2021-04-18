@@ -1,0 +1,17 @@
+/*params list*/
+.desc-tip {
+  color: gray;
+  user-select: none;
+  font-size: small;
+}
+
+#params-list {
+  padding-inline-start: 20px;
+}
+#params-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 2px 0;
+  border: 1px solid gray;
+}
