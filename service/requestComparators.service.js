@@ -8,11 +8,11 @@ class RequestComparatorsService {
 
   startWatchingRequest() {
     chrome.devtools.network.onRequestFinished.addListener(
-        ({request, _resourceType}) => {
+        ({ request, _resourceType }) => {
           if (this.isRequestNeedBeRecord(_resourceType)) {
             this.store.addUrlOption(getOriginUrl(request.url));
           }
-          this.recordingHandle(request);
+          this.recordingHandle(request, _resourceType);
         });
   }
 
@@ -20,7 +20,7 @@ class RequestComparatorsService {
     this.store.setState('paramsList', []);
   }
 
-  recordingHandle({request, _resourceType}) {
+  recordingHandle(request, _resourceType) {
     if (!this.isRequestNeedBeRecord(_resourceType)) {
       return false;
     }
