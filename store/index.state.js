@@ -1,8 +1,9 @@
 import StoreService from "../service/store.service.js";
-import EventEmitter from "../utils/EventEmitter.js";
+import EventEmitter from "../common/utils/EventEmitter.js";
+import {DISPLAY_MODE} from "../common/constant/index.js";
 
 const initialState = {
-  isRecording: false,
+  displayMode: DISPLAY_MODE.STRING,
   url: null,
   paramsList: [],
   urlOptionList: []

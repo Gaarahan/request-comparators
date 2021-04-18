@@ -1,5 +1,6 @@
 import State from '../store/index.state.js';
-import {getOriginUrl} from '../utils/utils.js';
+import {getOriginUrl} from '../common/utils/utils.js';
+import {DISPLAY_MODE} from "../common/constant/index.js";
 
 class RequestComparatorsService {
   constructor() {
@@ -55,6 +56,11 @@ class RequestComparatorsService {
   isRequestNeedBeRecord(resourceType) {
     const resourceTypeNeedBeRecord = ['xhr', 'fetch'];
     return resourceTypeNeedBeRecord.includes(resourceType.toLowerCase());
+  }
+
+  toggleParamDisplayMode() {
+    const displayMode = this.store.getState('displayMode');
+    this.store.setState('displayMode', displayMode === DISPLAY_MODE.TREE ? DISPLAY_MODE.STRING : DISPLAY_MODE.TREE);
   }
 }
 

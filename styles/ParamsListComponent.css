@@ -15,3 +15,15 @@
   margin: 2px 0;
   border: 1px solid gray;
 }
+#params-list li div.param-container .json-container {
+  display: block;
+}
+#params-list li div.param-container .plant-param {
+  display: none;
+}
+#params-list.display-as-string li div.param-container .json-container {
+  display: none;
+}
+#params-list.display-as-string li div.param-container .plant-param {
+  display: block;
+}
