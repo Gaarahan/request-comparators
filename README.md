@@ -2,7 +2,8 @@
 选择一个请求路径，点击开始来录制其所有传参。支持GET、POST数据的展示。
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-![image](https://user-images.githubusercontent.com/34125917/113899038-fc945900-97fe-11eb-9f2c-33520de34fd1.png)
+![image](https://user-images.githubusercontent.com/34125917/115248614-6e9f6300-a15a-11eb-861f-bd6b0972cd7f.png)
+
 
 ### Installing
 下载该项目，打开Chrome - 管理扩展程序 - 开发者模式 - 加载已解压的扩展程序 - 选择项目目录即可
