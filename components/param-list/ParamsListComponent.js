@@ -1,15 +1,15 @@
 import ParamItem from './param-item/ParamItem.js';
-import ComponentWithStore from "../common/ComponentWithStore.js";
+import ComponentWithStore from '../common/ComponentWithStore.js';
 
-export default class ParamsListComponent extends ComponentWithStore{
-  onInit() {
+export default class ParamsListComponent extends ComponentWithStore {
+  onInit () {
     this.paramsListEle = document.querySelector('#params-list');
 
     this.store.watchState('paramsList', this.renderParams.bind(this));
     this.store.watchState('displayMode', this.toggleDisplayMode.bind(this));
   }
 
-  renderParams(paramsList) {
+  renderParams (paramsList) {
     if (paramsList.length === 0) {
       this.paramsListEle.innerHTML = '';
     } else {
@@ -18,8 +18,7 @@ export default class ParamsListComponent extends ComponentWithStore{
     }
   }
 
-  toggleDisplayMode() {
+  toggleDisplayMode () {
     this.paramsListEle.classList.toggle('display-as-string');
   }
 }
-

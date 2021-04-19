@@ -1,13 +1,13 @@
 import ElementCreator from '../../common/ElementCreator.js';
 
 export default class ParamItem extends ElementCreator {
-  constructor(param) {
+  constructor (param) {
     super();
 
     this.renderElement(param);
   }
 
-  renderElement(param) {
+  renderElement (param) {
     this.element = document.createElement('li');
 
     const paramContainer = document.createElement('div');
@@ -22,7 +22,6 @@ export default class ParamItem extends ElementCreator {
 
     const suffixEle = document.createElement('span');
     suffixEle.innerText = new Date().toTimeString();
-
 
     this.element.insertAdjacentElement('afterbegin', paramContainer);
     this.element.insertAdjacentElement('beforeend', suffixEle);

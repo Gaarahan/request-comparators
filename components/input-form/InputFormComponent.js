@@ -1,17 +1,17 @@
-import ComponentWithStore from "../common/ComponentWithStore.js";
+import ComponentWithStore from '../common/ComponentWithStore.js';
 import requestComparatorsService
-  from "../../service/requestComparators.service.js";
+  from '../../service/requestComparators.service.js';
 
-export default class InputFormComponent extends ComponentWithStore{
-  onInit() {
+export default class InputFormComponent extends ComponentWithStore {
+  onInit () {
     this.initUrlSelect();
     this.initToggleBtn();
     this.initClearBtn();
   }
 
-  renderUrlOptions(urlOptionList) {
+  renderUrlOptions (urlOptionList) {
     if (urlOptionList.length === 0) {
-      this.urlSelectEle.innerHTML = `<option value="">Select the url which you want to watch </option>`;
+      this.urlSelectEle.innerHTML = '<option value="">Select the url which you want to watch </option>';
     } else {
       const newUrl = urlOptionList[urlOptionList.length - 1];
       const urlOption = document.createElement('option');
@@ -22,7 +22,7 @@ export default class InputFormComponent extends ComponentWithStore{
     }
   }
 
-  initUrlSelect() {
+  initUrlSelect () {
     this.urlSelectEle = document.querySelector('#url-select');
 
     this.urlSelectEle.addEventListener('change', () => {
@@ -32,7 +32,7 @@ export default class InputFormComponent extends ComponentWithStore{
     this.store.watchState('urlOptionList', this.renderUrlOptions.bind(this));
   }
 
-  initClearBtn() {
+  initClearBtn () {
     this.clearBtnEle = document.querySelector('#clear-btn');
 
     this.clearBtnEle.addEventListener('click', () => {
@@ -40,10 +40,10 @@ export default class InputFormComponent extends ComponentWithStore{
     });
   }
 
-  initToggleBtn() {
+  initToggleBtn () {
     this.toggleBtnEle = document.querySelector('#toggle-btn');
     this.toggleBtnEle.addEventListener('click', () => {
       requestComparatorsService.toggleParamDisplayMode();
-    })
+    });
   }
 }

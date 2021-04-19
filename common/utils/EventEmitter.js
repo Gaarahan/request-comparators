@@ -1,30 +1,30 @@
 let instance = null;
 
 export default class EventEmitter {
-    constructor() {
-        if (!instance) {
-            this.events = {}
-            instance = this;
-        }
-        return instance;
+  constructor () {
+    if (!instance) {
+      this.events = {};
+      instance = this;
     }
+    return instance;
+  }
 
-    subscribe(eventName, callback) {
-        if (!this.events[eventName]) {
-            this.events[eventName] = [];
-        }
-        this.events[eventName].push(callback);
-
-        return () => {
-            this.events[eventName] = this.events[eventName].filter(fn => fn !== callback);
-        }
+  subscribe (eventName, callback) {
+    if (!this.events[eventName]) {
+      this.events[eventName] = [];
     }
+    this.events[eventName].push(callback);
 
-    emit(eventName, payload) {
-        const callbacks = this.events[eventName] || [];
+    return () => {
+      this.events[eventName] = this.events[eventName].filter(fn => fn !== callback);
+    };
+  }
 
-        callbacks.forEach(fn => {
-            fn(payload);
-        })
-    }
+  emit (eventName, payload) {
+    const callbacks = this.events[eventName] || [];
+
+    callbacks.forEach(fn => {
+      fn(payload);
+    });
+  }
 }

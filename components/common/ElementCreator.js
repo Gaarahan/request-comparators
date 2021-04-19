@@ -1,10 +1,9 @@
 export default class ElementCreator {
-  constructor() {
+  constructor () {
     this.element = null;
   }
 
-  getElement() {
+  getElement () {
     return this.element;
   }
 }
-

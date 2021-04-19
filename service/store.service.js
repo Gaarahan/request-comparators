@@ -1,14 +1,13 @@
 export default class StoreService {
-  constructor(initialStore) {
+  constructor (initialStore) {
     this.store = initialStore;
   }
 
-  setValue(key, value) {
+  setValue (key, value) {
     this.store[key] = value;
   };
 
-  getValue(key) {
+  getValue (key) {
     return this.store[key];
   }
 }
-
