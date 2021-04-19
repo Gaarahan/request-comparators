@@ -21,6 +21,7 @@ export default class ParamItem extends ElementCreator {
     paramContainer.appendChild(plantParam);
 
     const suffixEle = document.createElement('span');
+    suffixEle.classList.add('time-str');
     const date = new Date();
     const timeStr = {
       hour: date.getHours().toString().padStart(2, '0'),

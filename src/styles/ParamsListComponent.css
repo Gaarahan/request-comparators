@@ -15,6 +15,10 @@
   margin: 2px 0;
   border: 1px solid gray;
 }
+#params-list li span.time-str {
+  line-height: 30px;
+  padding: 0 2px;
+}
 #params-list li div.param-container .json-container {
   display: block;
 }
