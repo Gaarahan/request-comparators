@@ -1,6 +1,6 @@
 import StoreService from '../service/store.service.js';
 import EventEmitter from '../common/utils/EventEmitter.js';
-import { DISPLAY_MODE } from '../common/constant/index.js';
+import { DISPLAY_MODE } from '../common/constant/constant.js';
 
 const initialState = {
   displayMode: DISPLAY_MODE.STRING,

@@ -1,6 +1,6 @@
 import State from '../store/index.state.js';
 import { getOriginUrl } from '../common/utils/utils.js';
-import { DISPLAY_MODE } from '../common/constant/index.js';
+import { DISPLAY_MODE } from '../common/constant/constant.js';
 
 class RequestComparatorsService {
   constructor () {

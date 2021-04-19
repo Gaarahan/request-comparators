@@ -11,7 +11,8 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    'max-len': ['error', { code: 140 }]
   },
   globals: {
     chrome: 'readonly',

@@ -21,7 +21,13 @@ export default class ParamItem extends ElementCreator {
     paramContainer.appendChild(plantParam);
 
     const suffixEle = document.createElement('span');
-    suffixEle.innerText = new Date().toTimeString();
+    const date = new Date();
+    const timeStr = {
+      hour: date.getHours().toString().padStart(2, '0'),
+      minute: date.getMinutes().toString().padStart(2, '0'),
+      second: date.getSeconds().toString().padStart(2, '0')
+    };
+    suffixEle.innerText = `${timeStr.hour}:${timeStr.minute}:${timeStr.second}`;
 
     this.element.insertAdjacentElement('afterbegin', paramContainer);
     this.element.insertAdjacentElement('beforeend', suffixEle);
