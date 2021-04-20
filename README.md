@@ -12,9 +12,7 @@
 
 #### 选择一个请求路径，点击开始来录制其所有传参。支持GET、POST数据的展示。支持JSON字串与树形结构的转化。
 
-
-![image](https://user-images.githubusercontent.com/34125917/115248614-6e9f6300-a15a-11eb-861f-bd6b0972cd7f.png)
-
+![image](https://user-images.githubusercontent.com/34125917/115401686-3e6cc880-a21d-11eb-883b-c59ef23e6e96.png)
 
 ### Installing
 下载该项目，打开Chrome - 管理扩展程序 - 开发者模式 - 加载已解压的扩展程序 - 选择项目目录即可
