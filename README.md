@@ -15,22 +15,22 @@
 ![image](https://user-images.githubusercontent.com/34125917/115401686-3e6cc880-a21d-11eb-883b-c59ef23e6e96.png)
 
 ### Installing
+
 下载该项目，打开Chrome - 管理扩展程序 - 开发者模式 - 加载已解压的扩展程序 - 选择项目目录即可
 ![image](https://user-images.githubusercontent.com/34125917/113977898-d8279380-9875-11eb-8212-641a1dcb8e6e.png)
-
 
 ### TODO - 需求
 
 1. 优化参数显示方式
-   - 添加请求发起时间 ✅
-   - 默认以JSON字串形式展示
-   - 全局添加 showAsJSONStr / showAsTree 按钮，在字符串与树形结构之间切换 ✅
-   - 单条数据添加全部展开与收起按钮
-   - 超长参数的展示形式还需考虑
+    - 添加请求发起时间 ✅
+    - 默认以JSON字串形式展示
+    - 全局添加 showAsJSONStr / showAsTree 按钮，在字符串与树形结构之间切换 ✅
+    - 单条数据添加全部展开与收起按钮
+    - 超长参数的展示形式还需考虑
 2. <del>可以在network上直接右键来进行录制</del><small>(chrome不支持定制)</small> ❎
     - 替代方案： 开启插件时即录制xhr请求，制成下拉列表供选择 ✅
 3. 可以使用diff的方式显示参数
-4. 添加clear按钮来清除数据
+4. 添加clear按钮来清除数据 ✅
 5. 移除开始,结束按钮. 减少不必要的用户交互 ✅
 6. 现有的json-tree展示很不友好，需要个人实现一份，参考chrome的json展示
 
