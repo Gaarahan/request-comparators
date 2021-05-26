@@ -4,7 +4,7 @@
   "description": "选择一个请求路径，点击开始来录制其所有传参。支持GET、POST数据的展示。",
   "main": "index.js",
   "directories": {
-    "lib": "lib"
+    "lib": "src/assets/lib"
   },
   "scripts": {
 

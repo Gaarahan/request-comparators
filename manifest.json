@@ -23,5 +23,5 @@
     "48": "/src/assets/icons/icon.png",
     "128": "/src/assets/icons/icon.png"
   },
-  "devtools_page": "./src/devtools/devtools.html"
+  "devtools_page": "./src/app/pages/devtools/devtools.html"
 }
