@@ -1,6 +1,6 @@
 import ComponentWithStore from '../common/ComponentWithStore.js';
 import requestComparatorsService
-from '../../service/requestComparators.service.js';
+  from '../../service/requestComparators.service.js';
 
 export default class InputFormComponent extends ComponentWithStore {
   onInit () {

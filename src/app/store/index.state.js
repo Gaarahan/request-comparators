@@ -6,7 +6,8 @@ const initialState = {
   displayMode: DISPLAY_MODE.STRING,
   url: null,
   paramsList: [],
-  urlOptionList: []
+  urlOptionList: [],
+  currentTabId: 0
 };
 
 const state = new StoreService(initialState);
