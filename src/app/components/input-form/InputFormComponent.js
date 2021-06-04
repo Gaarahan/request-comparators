@@ -12,7 +12,7 @@ export default class InputFormComponent extends ComponentWithStore {
   renderUrlOptions (urlOptionList) {
     if (urlOptionList.length === 0) {
       this.urlSelectEle.innerHTML =
-        '<option value="">Select the url which you want to watch </option>';
+          '<option value="">Select the url which you want to watch </option>';
     } else {
       const newUrl = urlOptionList[urlOptionList.length - 1];
       const urlOption = document.createElement('option');
