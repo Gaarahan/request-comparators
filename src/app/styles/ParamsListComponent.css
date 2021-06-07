@@ -23,6 +23,7 @@
   display: block;
 }
 #params-list li div.param-container .plant-param {
+  font-family: monospace;
   display: none;
 }
 #params-list.display-as-string li div.param-container .json-container {
