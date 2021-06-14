@@ -12,7 +12,8 @@ module.exports = {
   },
   rules: {
     semi: ['error', 'always'],
-    'max-len': ['error', { code: 140 }]
+    'max-len': ['error', { code: 140 }],
+    'space-before-function-paren': 'off'
   },
   globals: {
     chrome: 'readonly',

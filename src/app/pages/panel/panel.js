@@ -1,13 +1,9 @@
-// import InputFormComponent
-//   from '../../components/input-form/InputFormComponent.js';
 // import ParamsListComponent
 //   from '../../components/param-list/ParamsListComponent.js';
-// import requestComparatorsService
-//   from '../../service/requestComparators.service.js';
-// import TabListComponent from '../../components/tab-list/TabListComponent.js';
-import { TestComponent } from '../../components/common/TestComponent.js';
 import { componentRegister } from '../../components/common/Component.js';
-import { TabListComponent } from '../../components/tab-list/TabListComponent.js';
+import { TabListComponent } from '../../components/tab-list/tab-list.component.js';
+import { RequestComparatorComponent } from '../../components/request-compartor/request-comparator.component.js';
+import { InputFormComponent } from '../../components/request-compartor/input-form/input-form.component.js';
 
 // function initPage() {
 //   requestComparatorsService.startWatchingRequest();
@@ -21,15 +17,18 @@ import { TabListComponent } from '../../components/tab-list/TabListComponent.js'
 
 // initPage();
 
-componentRegister([TestComponent, TabListComponent]);
+componentRegister([
+  RequestComparatorComponent,
+  TabListComponent,
+  InputFormComponent,
+]);
 
 document.body.innerHTML = `
 <app-tab-list>
   <app-tab-item
     name='Compare Request'
   >
-    <app-test></app-test>
-    <app-request-compartor></app-request-compartor>
+    <app-request-comparator></app-request-comparator>
   </app-tab-item>
   <app-tab-item
     name='Inject Response'
