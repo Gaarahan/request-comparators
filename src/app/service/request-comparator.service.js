@@ -2,30 +2,27 @@ import State from '../store/index.state.js';
 import { getOriginUrl } from '../utils/utils.js';
 import { DISPLAY_MODE } from '../constant/constant.js';
 
-class RequestComparatorsService {
-  constructor () {
+class RequestComparatorService {
+  constructor() {
     this.store = new State();
   }
 
-  startWatchingRequest () {
+  startWatchingRequest() {
     chrome.devtools.network.onRequestFinished.addListener(
       ({ request, _resourceType }) => {
         if (this.isRequestNeedBeRecord(_resourceType)) {
           this.store.addUrlOption(getOriginUrl(request.url));
+          this.recordingHandle(request, _resourceType);
         }
-        this.recordingHandle(request, _resourceType);
-      });
+      }
+    );
   }
 
-  clearRecords () {
+  clearRecords() {
     this.store.setState('paramsList', []);
   }
 
-  recordingHandle (request, _resourceType) {
-    if (!this.isRequestNeedBeRecord(_resourceType)) {
-      return false;
-    }
-
+  recordingHandle(request, _resourceType) {
     const url = getOriginUrl(request.url);
 
     if (url === this.store.getState('url')) {
@@ -37,7 +34,7 @@ class RequestComparatorsService {
     }
   }
 
-  resolveParams (request) {
+  resolveParams(request) {
     // TODO 除了GET， POST
     if (request.method === 'GET') {
       return request.queryString;
@@ -53,15 +50,20 @@ class RequestComparatorsService {
     }
   }
 
-  isRequestNeedBeRecord (resourceType) {
+  isRequestNeedBeRecord(resourceType) {
     const resourceTypeNeedBeRecord = ['xhr', 'fetch'];
     return resourceTypeNeedBeRecord.includes(resourceType.toLowerCase());
   }
 
-  toggleParamDisplayMode () {
+  toggleParamDisplayMode() {
     const displayMode = this.store.getState('displayMode');
-    this.store.setState('displayMode', displayMode === DISPLAY_MODE.TREE ? DISPLAY_MODE.STRING : DISPLAY_MODE.TREE);
+    this.store.setState(
+      'displayMode',
+      displayMode === DISPLAY_MODE.TREE
+        ? DISPLAY_MODE.STRING
+        : DISPLAY_MODE.TREE
+    );
   }
 }
 
-export default new RequestComparatorsService();
+export default new RequestComparatorService();

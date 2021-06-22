@@ -1,5 +1,5 @@
 import { Component } from '../common/Component.js';
-import requestComparatorsService from '../../service/requestComparators.service.js';
+import requestComparatorsService from '../../service/request-comparator.service.js';
 
 export class RequestComparatorComponent extends Component {
   static selector() {

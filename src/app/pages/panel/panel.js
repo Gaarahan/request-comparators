@@ -1,9 +1,8 @@
-// import ParamsListComponent
-//   from '../../components/param-list/ParamsListComponent.js';
 import { componentRegister } from '../../components/common/Component.js';
 import { TabListComponent } from '../../components/tab-list/tab-list.component.js';
 import { RequestComparatorComponent } from '../../components/request-compartor/request-comparator.component.js';
 import { InputFormComponent } from '../../components/request-compartor/input-form/input-form.component.js';
+import { ParamsListComponent } from '../../components/request-compartor/param-list/params-list.component.js';
 
 // function initPage() {
 //   requestComparatorsService.startWatchingRequest();
@@ -21,6 +20,7 @@ componentRegister([
   RequestComparatorComponent,
   TabListComponent,
   InputFormComponent,
+  ParamsListComponent,
 ]);
 
 document.body.innerHTML = `

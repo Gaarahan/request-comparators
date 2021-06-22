@@ -1,13 +1,13 @@
-import ElementCreator from '../../common/ElementCreator.js';
+import ElementCreator from '../../../common/ElementCreator.js';
 
 export default class ParamItem extends ElementCreator {
-  constructor (param) {
+  constructor(param) {
     super();
 
     this.renderElement(param);
   }
 
-  renderElement (param) {
+  renderElement(param) {
     this.element = document.createElement('li');
 
     const paramContainer = document.createElement('div');
@@ -26,7 +26,7 @@ export default class ParamItem extends ElementCreator {
     const timeStr = {
       hour: date.getHours().toString().padStart(2, '0'),
       minute: date.getMinutes().toString().padStart(2, '0'),
-      second: date.getSeconds().toString().padStart(2, '0')
+      second: date.getSeconds().toString().padStart(2, '0'),
     };
     suffixEle.innerText = `${timeStr.hour}:${timeStr.minute}:${timeStr.second}`;
 

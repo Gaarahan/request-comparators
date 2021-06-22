@@ -1,5 +1,5 @@
 import { Component } from '../../common/Component.js';
-import requestComparatorsService from '../../../service/requestComparators.service.js';
+import requestComparatorsService from '../../../service/request-comparator.service.js';
 import State from '../../../store/index.state.js';
 
 export class InputFormComponent extends Component {
