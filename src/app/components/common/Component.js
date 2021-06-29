@@ -1,4 +1,8 @@
 export class Component extends HTMLElement {
+  static selector() {
+    return '';
+  }
+
   constructor() {
     super();
 
@@ -19,11 +23,7 @@ export class Component extends HTMLElement {
     return '';
   }
 
-  logicHandler(component) {}
-
-  static selector() {
-    return '';
-  }
+  logicHandler(/* component */) {}
 }
 
 export const componentRegister = (componentList) => {

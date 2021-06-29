@@ -1,6 +1,5 @@
 import { Component } from '../../common/Component.js';
 import State from '../../../store/index.state.js';
-import ParamItem from './param-item/ParamItem.js';
 
 export class ParamsListComponent extends Component {
   static selector() {
@@ -70,8 +69,9 @@ export class ParamsListComponent extends Component {
     if (paramsList.length === 0) {
       this.paramsListEle.innerHTML = '';
     } else {
-      const paramItem = new ParamItem(paramsList[paramsList.length - 1]);
-      this.paramsListEle.appendChild(paramItem.getElement());
+      // const paramItem = new ParamItemComponent(paramsList[paramsList.length - 1]);
+      const paramItem = document.createElement('app-param-item');
+      this.paramsListEle.appendChild(paramItem);
     }
   }
 

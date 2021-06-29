@@ -9,11 +9,11 @@ export class RequestComparatorComponent extends Component {
   template() {
     return `
         <app-input-form></app-input-form>
-        <app-param-list></app-param-list>
+        <app-params-list></app-params-list>
     `;
   }
 
-  logicHandler(component) {
+  logicHandler() {
     requestComparatorsService.startWatchingRequest();
   }
 

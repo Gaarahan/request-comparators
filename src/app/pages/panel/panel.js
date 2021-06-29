@@ -3,23 +3,13 @@ import { TabListComponent } from '../../components/tab-list/tab-list.component.j
 import { RequestComparatorComponent } from '../../components/request-compartor/request-comparator.component.js';
 import { InputFormComponent } from '../../components/request-compartor/input-form/input-form.component.js';
 import { ParamsListComponent } from '../../components/request-compartor/param-list/params-list.component.js';
-
-// function initPage() {
-//   requestComparatorsService.startWatchingRequest();
-//   // eslint-disable-next-line no-new
-//   new TabListComponent();
-//   // eslint-disable-next-line no-new
-//   new InputFormComponent();
-//   // eslint-disable-next-line no-new
-//   new ParamsListComponent();
-// }
-
-// initPage();
+import { ParamItemComponent } from '../../components/request-compartor/param-list/param-item/param-item.js';
 
 componentRegister([
   RequestComparatorComponent,
   TabListComponent,
   InputFormComponent,
+  ParamItemComponent, // TODO 组件的依赖应该由组件自己来维护
   ParamsListComponent,
 ]);
 
