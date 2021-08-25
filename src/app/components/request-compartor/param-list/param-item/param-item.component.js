@@ -1,8 +1,13 @@
 import { Component } from '../../../common/Component.js';
 
 export class ParamItemComponent extends Component {
-  plantParamStr = 'init plantParamStr';
-  timeStr = 'init time str';
+  constructor() {
+    super();
+
+    this.plantParamStr = 'init plantParamStr';
+    this.timeStr = 'init time str';
+  }
+
   static selector() {
     return 'app-param-item';
   }
@@ -17,11 +22,14 @@ export class ParamItemComponent extends Component {
     `;
   }
 
-  style() {}
+  style() {
+    return `
+       <link rel="stylesheet" type="text/css" href="/src/assets/lib/jsonview/jsonview.bundle.css"> 
+    `;
+  }
 
   logicHandler(component) {
-    // TODO get param form component attr
-    const param = { test: 'a' };
+    const param = JSON.parse(this.dataset.param);
     const paramContainer = component.querySelector('.param-container');
     JsonView.renderJSON(param, paramContainer);
 

@@ -69,8 +69,14 @@ export class ParamsListComponent extends Component {
     if (paramsList.length === 0) {
       this.paramsListEle.innerHTML = '';
     } else {
-      // const paramItem = new ParamItemComponent(paramsList[paramsList.length - 1]);
       const paramItem = document.createElement('app-param-item');
+      let paramStr = '';
+      try {
+        paramStr = JSON.stringify(paramsList[paramsList.length - 1]);
+      } catch (e) {
+        paramStr = JSON.stringify([]);
+      }
+      paramItem.dataset.param = paramStr;
       this.paramsListEle.appendChild(paramItem);
     }
   }

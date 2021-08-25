@@ -3,7 +3,7 @@ import { TabListComponent } from '../../components/tab-list/tab-list.component.j
 import { RequestComparatorComponent } from '../../components/request-compartor/request-comparator.component.js';
 import { InputFormComponent } from '../../components/request-compartor/input-form/input-form.component.js';
 import { ParamsListComponent } from '../../components/request-compartor/param-list/params-list.component.js';
-import { ParamItemComponent } from '../../components/request-compartor/param-list/param-item/param-item.js';
+import { ParamItemComponent } from '../../components/request-compartor/param-list/param-item/param-item.component.js';
 
 componentRegister([
   RequestComparatorComponent,

@@ -18,6 +18,6 @@ export class RequestComparatorComponent extends Component {
   }
 
   style() {
-    return super.style();
+    return '';
   }
 }
